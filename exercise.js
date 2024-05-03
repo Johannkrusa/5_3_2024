@@ -1,6 +1,6 @@
 // =====  exercise ====
 
-// Query 1
+// query 1
 
 for (let i = 1; i <= 10; i++)
  {
@@ -10,10 +10,11 @@ for (let i = 1; i <= 10; i++)
 
 // query 2
 
-var word = "maa dadaam"
+var word = "madam"
 var isPalindrome = true;
 
 word = word.toLowerCase();
+//remove all spaces
 word = word.replace(/\s+/g, '');
 
 for (let i = 1; i < (word.length / 2) - 1; i++)
@@ -33,20 +34,13 @@ else
     console.log(word, "is not a palindrome")
 }
 
-var word = "123456";
-var original_word = "123456";
+// easier way to understand
+
+var word = "madam";
 var tempWord = "";
 var isPalindrome = true;
 
 word = word.toLowerCase();
-for (let i = (word.length-1); i >= 0; i--)
-    {
-        if (word[i] == '')
-            {
-                word[i] 
-            }
-    }
-
 
 for (let i = (word.length-1); i >= 0; i--)
 {
@@ -54,6 +48,14 @@ for (let i = (word.length-1); i >= 0; i--)
 }
 console.log(tempWord);
 
+if (tempWord === word)
+{
+   isPalindrome = true;
+}
+else
+{
+   isPalindrome = false;
+}
 
 if(isPalindrome)
 {
@@ -64,11 +66,10 @@ else
     console.log(word, "is not a palindrome")
 }
 
-
 // query 3
 
 var num_cm = 100000;
-var num_km = num_cm/ 100000;
+var num_km = Math.floor(num_cm/ 100000);
 
 console.log(num_cm, "cm -->",  num_km, "km" );
 
@@ -78,10 +79,11 @@ var bal = 1000;
 var string_bal = String(bal);
 var formatted_bal = "";
 var counter = 1;
+var result = '';
 
 for (var i = string_bal.length - 1; i >= 0; i--)
     {
-        if (counter === 3)
+        if (counter === 3 && i !==0)
         {
             formatted_bal += string_bal[i] + '.';
             counter = 1;
@@ -93,13 +95,13 @@ for (var i = string_bal.length - 1; i >= 0; i--)
         }
 
     }
-var result
-for (var i = string_bal.length -1; i>= 0; i--)
+
+for (var i = formatted_bal.length -1; i>= 0; i--)
     {
         result += formatted_bal[i];
     }
 
-var str_format = "RP." + formatted_bal + ',00' ;
+var str_format = "RP." + result + ",00";
 
 console.log(str_format);
 
@@ -108,7 +110,6 @@ console.log(str_format);
 var str = "Hello World";
 var search_str = "ell";
 var temp_str = "";
-
 
 for (let i = 0; i < str.length; i++)
 {
@@ -120,6 +121,7 @@ for (let i = 0; i < str.length; i++)
             found = false;
             break;
         }
+       //loops again checking if the next char of str == search str
         found = true;
     }
     if (!found)
@@ -128,12 +130,12 @@ for (let i = 0; i < str.length; i++)
     }
     else
     {
+        //skips the deleted characters
         i += search_str.length - 1;
     }
 }
 
 console.log(temp_str);
-
 
 // query 6 
 
@@ -172,7 +174,7 @@ var word2 = "";
 
 for (var i = 0; i <= word.length -1; i++)
     {
-        // uppercase
+        // ascii code dex of uppercase is less than 90
         if (word.charCodeAt(i) <= 90)
         {
             word2 += word[i].toLowerCase();
@@ -192,9 +194,9 @@ var num2 = 27;
 var largest;
 
 if (num1 > num2)
-    {
-        largest = num1;
-    }
+{
+    largest = num1;
+}
 else
 {
     largest = num2;
@@ -233,7 +235,7 @@ if (num3 > num1) {
     }
 }
 
-console.log(num1, num2, num3);
+console.log("sorting from lowest to highest", num3, num2, num1);
 
 // query 11
 
@@ -275,5 +277,11 @@ for (var i = 0; i < string.length-1; i++)
             modified_string += string[i];
         }
     }
+
+
+
+
+
+
 
 console.log(modified_string);
